@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "97c077ed-5b9f-46df-8680-183b5e34cbc4",
+		"name": "homework",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://www.tut.by/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e898c274-908b-41ce-bb0d-77d8e6a9ed26",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Белорусский портал TUT.BY. Новости Беларуси и мира\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.tut.by/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"tut",
+						"by"
+					],
+					"path": [
+						""
+					]
+				},
+				"description": "Testing response time and title content"
+			},
+			"response": []
+		},
+		{
+			"name": "https://vk.com/feed",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "70c8712e-d50b-48d2-9aa0-fd2430ba8e62",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Уваход | УКантакце\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://vk.com/feed",
+					"protocol": "https",
+					"host": [
+						"vk",
+						"com"
+					],
+					"path": [
+						"feed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://www.onliner.by/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6bd3e91c-1a9a-47ba-a8c9-5e98928d79a5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Onliner\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.onliner.by/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"onliner",
+						"by"
+					],
+					"path": [
+						""
+					]
+				},
+				"description": "Testing status code, response time, containing title"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
